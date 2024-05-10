@@ -64,7 +64,7 @@ $backgroundColor: #f8f0fb;
   max-width: 100%;
   //text-wrap: nowrap;
   white-space: wrap;
-  font-size: clamp(2.4rem, 10vw - 2.0rem, 48px);
+  font-size: clamp(2.8rem, 10vw - 2.0rem, 48px);
   text-transform: uppercase;
   line-height: 100%;
   font-family: Kanit, sans-serif;
@@ -144,6 +144,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     @media (max-width: $mobile) {
       display: block;
     }
@@ -169,7 +170,8 @@ h1 {
   &__menu {
     display: flex;
     align-items: center;
-    font-size: clamp(14px, 4.2vw - 2.0rem, 2.0rem);
+    font-size: clamp(16px, 4.2vw - 3.0rem, 2.0rem);
+    text-wrap: nowrap;
     @media (max-width: $mobile) {
       justify-content: space-between;
     }
@@ -179,7 +181,7 @@ h1 {
     ul {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: clamp(10px, 4.2vw - 2.0rem, 2.0rem);
     }
   }
 }

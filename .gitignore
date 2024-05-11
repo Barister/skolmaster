@@ -3,3 +3,9 @@
 gulpfile.js
 package-lock.json
 package.json
+/src/logs
+/src/mail
+/src/PHPMailer
+/dist/logs
+/dist/mail
+/dist/PHPMailer

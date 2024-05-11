@@ -37,6 +37,21 @@
 
       @@include('html/footer.html', {})
 
+      <div class="modal-form">
+         <form id="form" method="POST" action="mail/send.php" onsubmit="submitForm(event)">
+            <p>Оставьте свои данные, и мы перезвоним!</p>
+            <fieldset>
+               <label for="name"><input id="name" type="text" name="name" placeholder="Имя" /></label>
+               <label for="phone"><input id="phone" type="tel" name="phone" placeholder="Телефон" minlength="9"
+                     required /></label>
+               <label for="email" class="modal-form__email">Mail *<input id="email" type="email"
+                     placeholder="Enter Email" name="email" /></label>
+            </fieldset>
+            <input class="btn" id="submit" type="submit" value="Отправить">
+            <div class="modal-form__close">X</div>
+         </form>
+      </div>
+
    </div>
 
    <script src="js/app.min.js"></script>

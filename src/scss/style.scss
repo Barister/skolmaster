@@ -1,6 +1,6 @@
 @import 'fonts';
 @import 'reset';
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
 
 // variables
 
@@ -67,7 +67,7 @@ $backgroundColor: #f8f0fb;
   font-size: clamp(2.8rem, 10vw - 2.0rem, 48px);
   text-transform: uppercase;
   line-height: 100%;
-  font-family: Kanit, sans-serif;
+  //font-family: Kanit, sans-serif;
   position: relative;
 }
 
@@ -114,6 +114,7 @@ $backgroundColor: #f8f0fb;
   background-color: $primaryColor;
   color: white;
   text-align: center;
+  cursor: pointer;
   span {
     white-space: nowrap;
     font-size: 1.6rem;
@@ -128,8 +129,7 @@ $backgroundColor: #f8f0fb;
 
 
 h1 {
-  backdrop-filter: blur(5px);
-  background-color: hsl(0 0% 100% / 0.4);
+  
 }
 
 // header
@@ -170,7 +170,7 @@ h1 {
   &__menu {
     display: flex;
     align-items: center;
-    font-size: clamp(16px, 4.2vw - 3.0rem, 2.0rem);
+    font-size: clamp(14px, 5vw - 3.0rem, 1.8rem);
     text-wrap: nowrap;
     @media (max-width: $mobile) {
       justify-content: space-between;
@@ -282,6 +282,8 @@ h1 {
   /* .hero-page__title */
 
   &__title {
+    backdrop-filter: blur(5px);
+    background-color: hsl(0 0% 100% / 0.4);
     padding: clamp(10px, 6vw - 2.0rem, 30px);
     line-height: 1.2;
   }
@@ -312,3 +314,71 @@ h1 {
   }
 }
 
+// modal form
+
+.modal-form {
+  display: none;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 300px;
+  height: min-content;
+  &::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background: rgba(0,0,0,0.75);
+ }
+ &.active {
+  display: block;
+  form {
+    position: relative;
+    padding: 20px 35px;
+    backdrop-filter: blur(5px);
+    background-color: hsl(0 0% 100% / 0.4);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+    color: white;
+    p {
+      
+    }
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      margin-bottom: 10px;
+    }
+    label {
+      
+    }
+    input {
+      padding: 7px 10px;
+      width: 100%;
+      .btn {
+        width: max-content;
+      }
+    }
+    // &::after {
+    //   content: 'X';
+      
+    // }
+    .modal-form__close {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+  }
+ }
+  &__email {
+    // display: none;
+    // visibility: hidden;
+  }
+}

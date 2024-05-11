@@ -38,7 +38,7 @@
       @@include('html/footer.html', {})
 
       <div class="modal-form">
-         <form id="form" method="POST" action="mail/send.php" onsubmit="submitForm(event)">
+         <form id="form" action="#">
             <p>Оставьте свои данные, и мы перезвоним!</p>
             <fieldset>
                <label for="name"><input id="name" type="text" name="name" placeholder="Имя" /></label>
@@ -46,8 +46,16 @@
                      required /></label>
                <label for="email" class="modal-form__email">Mail *<input id="email" type="email"
                      placeholder="Enter Email" name="email" /></label>
+               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked><span>
+                     Я даю свое согласие
+                     на обработку персональных
+                     данных в соответствии с
+                     <a href="#" target="_blank">Условиями</a>
+                  </span></label>
             </fieldset>
+
             <input class="btn" id="submit" type="submit" value="Отправить">
+
             <div class="modal-form__close">X</div>
          </form>
       </div>

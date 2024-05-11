@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
 let buttons = document.querySelectorAll('.btn');
 let modalForm = document.querySelector('.modal-form');
 
+const form = document.querySelector('#form');
+
 buttons.forEach(el => {
    el.addEventListener('click', onClick);
 });
@@ -32,6 +34,7 @@ function onClick(event) {
    //console.log('нажата кнопка');
    modalForm.classList.add('active');
    document.addEventListener('click', outerClickListener);
+   form.addEventListener('submit', formValidate);
 }
 
 function outerClickListener(event) {
@@ -46,12 +49,52 @@ function hidePopup() {
    modalForm.classList.remove('active');
 }
 
+// form phone validation
+
+const phonePattern = /^(\+7|7|8|9)\d{9,}$/; // Регулярное выражение для телефонов в России
+
+
+
+function formValidate(event) {
+
+   event.preventDefault(); // отменяем отправку формы
+
+   // Получаем значение поля, которое нужно валидировать
+   const inputField = form.querySelector('#phone');
+   const inputStatus = phonePattern.test(inputField.value);
+
+   console.log('inputStatus:', inputStatus);
+
+
+
+   // Выполняем валидацию (например, проверяем, что поле не пустое)
+   // if (!inputValue.trim()) {
+   //    alert('Please enter a value in the field');
+   //    return; // Прекращаем выполнение функции, чтобы форма не отправлялась
+   // }
+
+   // Если валидация прошла успешно, можно отправить форму на сервер
+   if (inputStatus) {
+      submitForm(event);
+   }
+   else {
+      alert('Проверьте номер телефона на ошибки!');
+   }
+
+
+}
+
+
+
+
+
 
 
 // form send function
 
 async function submitForm(event) {
-   event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
+   event.preventDefault();
+
    try {
       // Формируем запрос
       const response = await fetch(event.target.action, {

@@ -8,6 +8,22 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>SkolMaster.ru - быстрый ремонт лобового стекла Вашей машины на выезде в Санкт-Петербурге</title>
    <link rel="stylesheet" href="css/style.min.css">
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+   <link rel="manifest" href="/site.webmanifest">
+   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
+   <meta name="description"
+      content="Оперативно устраним сколы и предотвратим распространение трещин по стеклу. Приедем к Вам в любую точку Санкт-Петербурга." />
+   <link rel="canonical" href="https://skolmaster.ru/" />
+   <meta property="og:locale" content="ru_RU" />
+   <meta property="og:type" content="website" />
+   <meta property="og:title" content="SkolMaster.ru - быстрый ремонт лобового стекла Вашей машины на выезде в Санкт-Петербурге" />
+   <meta property="og:image" content="/android-chrome-512x512.png" />
+   <meta property="og:description"
+      content="Оперативно устраним сколы и предотвратим распространение трещин по стеклу. Приедем к Вам в любую точку Санкт-Петербурга." />
+   <meta property="og:url" content="https://skolmaster.ru//" />
+   <meta property="og:site_name" content="SkolMaster.ru - быстрый ремонт лобового стекла Вашей машины на выезде в Санкт-Петербурге" />
 </head>
 
 <body>
@@ -57,7 +73,7 @@
       
 
       <div class="modal-form">
-         <form id="form" method="POST" action="mail/send.php" onsubmit="submitForm(event)">
+         <form id="form" action="#">
             <p>Оставьте свои данные, и мы перезвоним!</p>
             <fieldset>
                <label for="name"><input id="name" type="text" name="name" placeholder="Имя" /></label>
@@ -65,8 +81,16 @@
                      required /></label>
                <label for="email" class="modal-form__email">Mail *<input id="email" type="email"
                      placeholder="Enter Email" name="email" /></label>
+               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked><span>
+                     Я даю свое согласие
+                     на обработку персональных
+                     данных в соответствии с
+                     <a href="#" target="_blank">Условиями</a>
+                  </span></label>
             </fieldset>
+
             <input class="btn" id="submit" type="submit" value="Отправить">
+
             <div class="modal-form__close">X</div>
          </form>
       </div>

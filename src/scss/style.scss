@@ -38,7 +38,8 @@ $backgroundColor: #f8f0fb;
    font-size: 2.0rem;
    font-family: Roboto, sans-serif;
    &.scroll-lock {
-      overflow: hidden;
+      //overflow: hidden;
+      user-select: none
    }
  }
 
@@ -373,7 +374,7 @@ h1 {
       text-align: left;
       input {
         display: inline;
-        width: 20px;
+        width: 17px;
         aspect-ratio: 1;
         margin-right: 10px;
       }
@@ -383,6 +384,7 @@ h1 {
         font-size: 14px;
       }
     }
+    
     .modal-form__close {
       position: absolute;
       right: 10px;
@@ -394,5 +396,23 @@ h1 {
   &__email {
     // display: none;
     // visibility: hidden;
+  }
+  &__result {
+    display: none;
+    visibility: hidden;
+    border: 2px solid $accentColor;
+    font-size: 14px;
+    text-align: left;
+    padding: 2px 5px;
+    &.ok {
+      border: 2px solid #46b450;
+      display: block;
+      visibility: visible;
+    }
+    &.err {
+      border: 2px solid rgb(255, 185, 0);
+      display: block;
+      visibility: visible;
+    }
   }
 }

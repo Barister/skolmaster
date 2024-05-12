@@ -50,7 +50,7 @@ body {
   font-family: Roboto, sans-serif;
 }
 body.scroll-lock {
-  overflow: hidden;
+  user-select: none;
 }
 
 .wrapper {
@@ -318,7 +318,7 @@ body.scroll-lock {
 }
 .modal-form.active form .modal-form__policy input {
   display: inline;
-  width: 20px;
+  width: 17px;
   aspect-ratio: 1;
   margin-right: 10px;
 }
@@ -332,4 +332,22 @@ body.scroll-lock {
   right: 10px;
   top: 5px;
   cursor: pointer;
+}
+.modal-form__result {
+  display: none;
+  visibility: hidden;
+  border: 2px solid #8075ff;
+  font-size: 14px;
+  text-align: left;
+  padding: 2px 5px;
+}
+.modal-form__result.ok {
+  border: 2px solid #46b450;
+  display: block;
+  visibility: visible;
+}
+.modal-form__result.err {
+  border: 2px solid rgb(255, 185, 0);
+  display: block;
+  visibility: visible;
 }

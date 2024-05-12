@@ -38,7 +38,7 @@
       @@include('html/footer.html', {})
 
       <div class="modal-form">
-         <form id="form" action="#">
+         <form id="form" action="#" class="modal-form__form">
             <p>Оставьте свои данные, и мы перезвоним!</p>
             <fieldset>
                <label for="name"><input id="name" type="text" name="name" placeholder="Имя" /></label>
@@ -46,7 +46,8 @@
                      required /></label>
                <label for="email" class="modal-form__email">Mail *<input id="email" type="email"
                      placeholder="Enter Email" name="email" /></label>
-               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked><span>
+               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked
+                     required><span>
                      Я даю свое согласие
                      на обработку персональных
                      данных в соответствии с
@@ -55,7 +56,7 @@
             </fieldset>
 
             <input class="btn" id="submit" type="submit" value="Отправить">
-
+            <div class="modal-form__result"></div>
             <div class="modal-form__close">X</div>
          </form>
       </div>

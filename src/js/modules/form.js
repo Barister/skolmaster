@@ -24,6 +24,7 @@ let buttons = document.querySelectorAll('.btn');
 let modalForm = document.querySelector('.modal-form');
 
 const form = document.querySelector('#form');
+const body = document.querySelector('body');
 
 buttons.forEach(el => {
    el.addEventListener('click', onClick);
@@ -33,8 +34,10 @@ function onClick(event) {
    event.stopPropagation();
    //console.log('нажата кнопка');
    modalForm.classList.add('active');
+   form.classList.add('active');
    document.addEventListener('click', outerClickListener);
    form.addEventListener('submit', formValidate);
+   body.classList.toggle('scroll-lock');
 }
 
 function outerClickListener(event) {
@@ -42,52 +45,52 @@ function outerClickListener(event) {
       //console.log('hidePopup call');
       hidePopup();
    }
-   document.removeEventListener('click', outerClickListener);
+   //document.removeEventListener('click', outerClickListener);
 }
 
 function hidePopup() {
    modalForm.classList.remove('active');
+   form.classList.remove('active');
+   body.classList.toggle('scroll-lock');
+
+   formSubmitResult.textContent = '';
+   formSubmitResult.classList.remove('err', 'ok');
 }
 
-// form phone validation
+// form validation
 
 const phonePattern = /^(\+7|7|8|9)\d{9,}$/; // Регулярное выражение для телефонов в России
 
-
+let formSubmitResult = modalForm.querySelector('.modal-form__result');
 
 function formValidate(event) {
 
    event.preventDefault(); // отменяем отправку формы
 
-   // Получаем значение поля, которое нужно валидировать
-   const inputField = form.querySelector('#phone');
-   const inputStatus = phonePattern.test(inputField.value);
+
+   const inputMailField = form.querySelector('#email');
+   const inputPolicyField = form.querySelector('#checkbox');
+
+   console.log(inputPolicyField);
+
+   const inputPhoneField = form.querySelector('#phone');
+   const inputStatus = phonePattern.test(inputPhoneField.value);
 
    console.log('inputStatus:', inputStatus);
 
-
-
-   // Выполняем валидацию (например, проверяем, что поле не пустое)
-   // if (!inputValue.trim()) {
-   //    alert('Please enter a value in the field');
-   //    return; // Прекращаем выполнение функции, чтобы форма не отправлялась
-   // }
-
    // Если валидация прошла успешно, можно отправить форму на сервер
-   if (inputStatus) {
+   if (inputStatus && inputPolicyField && !inputMailField.value) {
       submitForm(event);
+
    }
    else {
-      alert('Проверьте номер телефона на ошибки!');
+      console.log('Проверьте номер телефона на ошибки!');
+      formSubmitResult.textContent = 'Проверьте номер телефона на ошибки!';
+      formSubmitResult.classList.add('err');
    }
 
 
 }
-
-
-
-
-
 
 
 // form send function
@@ -115,13 +118,21 @@ async function submitForm(event) {
       const json = await response.json();
       if (json.result === "success") {
          // в случае успеха
-         alert(json.info);
+         formSubmitResult.textContent = 'Заявка успешна отправлена.';
+         formSubmitResult.classList.add('ok');
+         //alert(json.info);
+         setTimeout(hidePopup(), 3000);
+         form.reset();
       } else {
          // в случае ошибки
          console.log(json);
-         throw (json.info);
+         // throw (json.info);
+         formSubmitResult.textContent = `Ошибка отправки заявки. ${json.info}`;
+         formSubmitResult.classList.add('err');
       }
    } catch (error) { // обработка ошибки
-      alert(error);
+      // alert(error);
+      formSubmitResult.textContent = `Ошибка отправки заявки. ${error}`;
+      formSubmitResult.classList.add('err');
    }
 }

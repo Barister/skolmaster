@@ -40,8 +40,8 @@
       <nav class="header__menu menu">
          <p>Есть вопросы?</p>
          <ul>
-            <li><a href="tel:" class="menu__phone">+7 911 1111111</a></li>
-            <li><a href="tel:" class="menu__wp">WA</a></li>
+            <li><a href="tel:+79112945776" class="menu__phone">+7 911 2945776</a></li>
+            <li><a href="https://wa.me/+79112945776" class="menu__wp">WA</a></li>
             <li><a class="menu__booking btn">Перезвоните мне</a></li>
          </ul>
       </nav>
@@ -73,7 +73,7 @@
       
 
       <div class="modal-form">
-         <form id="form" action="#">
+         <form id="form" action="#" class="modal-form__form">
             <p>Оставьте свои данные, и мы перезвоним!</p>
             <fieldset>
                <label for="name"><input id="name" type="text" name="name" placeholder="Имя" /></label>
@@ -81,7 +81,8 @@
                      required /></label>
                <label for="email" class="modal-form__email">Mail *<input id="email" type="email"
                      placeholder="Enter Email" name="email" /></label>
-               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked><span>
+               <label class="modal-form__policy" for="checkbox"><input id="checkbox" type="checkbox" checked
+                     required><span>
                      Я даю свое согласие
                      на обработку персональных
                      данных в соответствии с
@@ -90,7 +91,7 @@
             </fieldset>
 
             <input class="btn" id="submit" type="submit" value="Отправить">
-
+            <div class="modal-form__result"></div>
             <div class="modal-form__close">X</div>
          </form>
       </div>

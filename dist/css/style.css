@@ -1,11 +1,25 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;
+
+0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@font-face {
+  font-family: Impact;
+  font-display: swap;
+  src: url("../fonts/Impact.woff2") format("woff2"), url("../fonts/Impact.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
-*, *::before, *::after {
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -22,18 +36,26 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   min-width: 320px;
   background-color: #f8f0fb;
@@ -49,8 +71,11 @@ body {
   font-size: 2rem;
   font-family: Roboto, sans-serif;
 }
+
 body.scroll-lock {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .wrapper {
@@ -80,6 +105,7 @@ body.scroll-lock {
   position: relative;
   display: inline-block;
 }
+
 .subtitle p {
   letter-spacing: 1.12px;
 }
@@ -88,19 +114,22 @@ body.scroll-lock {
   font-size: clamp(24px, 6vw - 2rem, 3.6rem);
   font-weight: 400;
   letter-spacing: 2.8px;
-  font-family: fantasy;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
+
 .logo-icon {
   margin-right: 10px;
   height: 30px;
 }
+
 .logo-word1 {
   margin-right: 5px;
 }
+
 .logo-word2 {
   background: #6320ee;
   color: white;
@@ -109,19 +138,20 @@ body.scroll-lock {
 
 .btn {
   display: inline-block;
-  border-radius: 41px;
   padding: 10px clamp(10px, 6vw - 2rem, 20px);
   background-color: #6320ee;
   color: white;
   text-align: center;
   cursor: pointer;
 }
+
 .btn span {
   white-space: nowrap;
   font-size: 1.6rem;
   line-height: 149%;
   position: relative;
 }
+
 .btn:hover {
   background-color: #8075ff;
 }
@@ -133,37 +163,25 @@ body.scroll-lock {
   /* .header__slogan */
   /* .header__menu */
 }
+
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
-@media (max-width: 767.98px) {
-  .header__container {
-    display: block;
-  }
-}
-@media (max-width: 767.98px) {
-  .header__logo {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-}
+
 .header__menu {
   display: flex;
   align-items: center;
   font-size: clamp(14px, 5vw - 3rem, 1.8rem);
   text-wrap: nowrap;
 }
-@media (max-width: 767.98px) {
-  .header__menu {
-    justify-content: space-between;
-  }
-}
+
 .header__menu p {
   margin-right: 10px;
 }
+
 .header__menu ul {
   display: flex;
   align-items: center;
@@ -175,15 +193,18 @@ body.scroll-lock {
   /* .menu__wp */
   /* .menu__book */
 }
+
 .menu__phone {
   text-wrap: nowrap;
 }
+
 .menu__phone::before {
   content: "\f095";
   font-family: "FontAwesome";
   color: #6320ee;
   margin-right: 5px;
 }
+
 .menu__wp::before {
   content: "\f232";
   font-family: "FontAwesome";
@@ -191,21 +212,12 @@ body.scroll-lock {
   font-weight: 700;
   margin-right: 5px;
 }
-@media (max-width: 479.98px) {
-  .menu__booking {
-    display: none;
-  }
-}
 
 .page {
   height: 100%;
   /* .page__hero */
 }
-@media (max-height: 600px) {
-  .page {
-    height: unset;
-  }
-}
+
 .page__hero {
   height: 100%;
   background-position: center center;
@@ -214,11 +226,7 @@ body.scroll-lock {
   position: relative;
   padding: clamp(20px, 6vw - 2rem, 50px) 0px;
 }
-@media (max-width: 479.98px) {
-  .page__hero {
-    background-position: left center;
-  }
-}
+
 .page__hero::after {
   content: "";
   position: absolute;
@@ -227,7 +235,8 @@ body.scroll-lock {
   left: 0;
   width: 100%;
   height: 100%;
-  border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
+  -o-border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
+     border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0.2), #000);
 }
 
 .hero-page {
@@ -240,12 +249,14 @@ body.scroll-lock {
   /* .hero-page__call */
   /* .hero-page__button */
 }
+
 .hero-page__container {
   width: 100%;
   position: relative;
   z-index: 5;
   color: white;
 }
+
 .hero-page__content {
   display: flex;
   flex-direction: column;
@@ -254,27 +265,34 @@ body.scroll-lock {
   max-width: 80ch;
   row-gap: clamp(2rem, 8vw - 2rem, 3rem);
 }
+
 .hero-page__title {
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   background-color: hsla(0, 0%, 100%, 0.4);
   padding: clamp(10px, 6vw - 2rem, 30px);
   line-height: 1.2;
 }
+
 .hero-page__subtitle span {
   display: inline-block;
 }
+
 .hero-page__price {
   background-color: #cad4ca;
   color: #000;
 }
+
 .modal-form {
   display: none;
   position: absolute;
   inset: 0;
   margin: auto;
   width: 300px;
+  height: -moz-min-content;
   height: min-content;
 }
+
 .modal-form::after {
   content: "";
   position: fixed;
@@ -285,13 +303,16 @@ body.scroll-lock {
   z-index: 50;
   background: rgba(0, 0, 0, 0.75);
 }
+
 .modal-form.active {
   display: block;
 }
+
 .modal-form.active form {
   position: relative;
   padding: 20px 35px;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   background-color: hsla(0, 0%, 100%, 0.4);
   z-index: 100;
   display: flex;
@@ -300,39 +321,48 @@ body.scroll-lock {
   text-align: center;
   color: white;
 }
+
 .modal-form.active form fieldset {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
+
 .modal-form.active form input {
   padding: 7px 10px;
   width: 100%;
 }
+
 .modal-form.active form input .btn {
+  width: -moz-max-content;
   width: max-content;
 }
+
 .modal-form.active form .modal-form__policy {
   display: inline;
   text-align: left;
 }
+
 .modal-form.active form .modal-form__policy input {
   display: inline;
   width: 17px;
   aspect-ratio: 1;
   margin-right: 10px;
 }
+
 .modal-form.active form .modal-form__policy span {
   display: inline;
   vertical-align: top;
   font-size: 14px;
 }
+
 .modal-form.active form .modal-form__close {
   position: absolute;
   right: 10px;
   top: 5px;
   cursor: pointer;
 }
+
 .modal-form__result {
   display: none;
   visibility: hidden;
@@ -341,13 +371,46 @@ body.scroll-lock {
   text-align: left;
   padding: 2px 5px;
 }
+
 .modal-form__result.ok {
   border: 2px solid #46b450;
   display: block;
   visibility: visible;
 }
+
 .modal-form__result.err {
   border: 2px solid rgb(255, 185, 0);
   display: block;
   visibility: visible;
+}
+
+@media (max-width: 767.98px) {
+  .header__container {
+    display: block;
+  }
+
+  .header__logo {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .header__menu {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .menu__booking {
+    display: none;
+  }
+
+  .page__hero {
+    background-position: left center;
+  }
+}
+
+@media (max-height: 600px) {
+  .page {
+    height: unset;
+  }
 }

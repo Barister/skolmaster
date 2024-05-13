@@ -71,12 +71,12 @@ function formValidate(event) {
    const inputMailField = form.querySelector('#email');
    const inputPolicyField = form.querySelector('#checkbox');
 
-   console.log(inputPolicyField);
+   // console.log(inputPolicyField);
 
    const inputPhoneField = form.querySelector('#phone');
    const inputStatus = phonePattern.test(inputPhoneField.value);
 
-   console.log('inputStatus:', inputStatus);
+   // console.log('inputStatus:', inputStatus);
 
    // Если валидация прошла успешно, можно отправить форму на сервер
    if (inputStatus && inputPolicyField && !inputMailField.value) {
@@ -96,7 +96,7 @@ function formValidate(event) {
 // form send function
 
 async function submitForm(event) {
-   event.preventDefault();
+   //event.preventDefault();
 
    try {
       // Формируем запрос
@@ -109,8 +109,9 @@ async function submitForm(event) {
 
       // проверяем, что ответ действительно JSON
       const contentType = response.headers.get('content-type');
+
       if (!contentType || !contentType.includes('application/json')) {
-         console.log(contentType);
+
          throw ('Processing error. The response is not JSON');
 
       }
@@ -121,18 +122,18 @@ async function submitForm(event) {
          formSubmitResult.textContent = 'Заявка успешна отправлена.';
          formSubmitResult.classList.add('ok');
          //alert(json.info);
-         setTimeout(hidePopup(), 3000);
+         setTimeout(hidePopup, 3000);
          form.reset();
       } else {
          // в случае ошибки
          console.log(json);
          // throw (json.info);
-         formSubmitResult.textContent = `Ошибка отправки заявки. ${json.info}`;
+         formSubmitResult.textContent = `Ошибка отправки заявки 1. ${json.info}`;
          formSubmitResult.classList.add('err');
       }
    } catch (error) { // обработка ошибки
       // alert(error);
-      formSubmitResult.textContent = `Ошибка отправки заявки. ${error}`;
+      formSubmitResult.textContent = `Ошибка отправки заявки 2. ${error}`;
       formSubmitResult.classList.add('err');
    }
 }

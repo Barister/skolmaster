@@ -87,7 +87,7 @@ $backgroundColor: #f8f0fb;
   font-weight: 400;
   //line-height: 1.2;
   letter-spacing: 2.8px;
-  font-family: fantasy;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   display: flex;
   flex-wrap: nowrap;
@@ -109,7 +109,7 @@ $backgroundColor: #f8f0fb;
 
 .btn {
   display: inline-block;
-  border-radius: 41px;
+  //border-radius: 41px;
   //border: 1px solid #000;
   padding: 10px clamp(10px, 6vw - 2.0rem, 20px);
   background-color: $primaryColor;

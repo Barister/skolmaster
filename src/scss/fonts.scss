@@ -1,12 +1,11 @@
+@font-face{
+	font-family: Impact;
+	font-display: swap;
+	src: url("../fonts/Impact.woff2") format("woff2"), url("../fonts/Impact.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-// Пример подключения шрифта
-
-// @font-face {
-//                         font-family: FontAwesome;
-//                         font-display: swap;
-//                         src: url("../fonts/FontAwesome.woff2") format("woff2"), url("../fonts/FontAwesome.woff") format("woff2");
-//                         font-weight: 400;
-//                         font-style: normal;
-//                      }

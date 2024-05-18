@@ -1,0 +1,37 @@
+User-agent: *
+
+Sitemap: https://skolmaster.ru/sitemap.xml
+
+# Запрет индексации определенных разделов или файлов
+
+
+# Исключение временных страниц
+Disallow: /tmp/
+
+# Запрет на индексацию и сканирование поисковыми системами
+User-agent: Googlebot
+Disallow: /mail/
+
+
+User-agent: Bingbot
+Disallow: /mail/
+ 
+
+User-agent: Yandex
+Disallow: /mail/
+
+
+# Задержка сканирования роботов
+Crawl-delay: 10
+
+# Ограничение доступа к каталогам
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /mail/
+
+# Игнорирование параметров URL
+Disallow: /*?
+
+# Игнорирование 404 страницы
+Disallow: /404.html

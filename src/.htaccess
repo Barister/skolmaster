@@ -1,0 +1,36 @@
+# Disable server signature
+ServerSignature Off
+
+# Disable directory listing
+Options -Indexes
+
+# Deny access to specific files
+<FilesMatch "^(config\.php|\.env)">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Deny access to sensitive directories
+<FilesMatch "^(admin\.html|admin\.php|admin/|phpmyadmin/)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Deny access to .htaccess files
+<Files ".ht*">
+    Require all denied
+</Files>
+
+# Redirect www to non-www and HTTP to HTTPS
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.skolmaster\.ru [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://skolmaster.ru/$1 [L,R=301]
+
+# Handle requests for non-existent files or directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+# 404 error and redirection
+ErrorDocument 404 /404.html

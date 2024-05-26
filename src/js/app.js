@@ -3,4 +3,3 @@ import form from './modules/form.js';
 
 functions.isWebp();
 
-// import Swiper, { Navigation, Pagination } from "swiper";
